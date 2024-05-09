@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import util.MisArrays;
 
-class TestMediaNotas {
+class TestMaximaNota {
 
 	static int[] notasValidas;
 	static int[] notasNoValidas;
-    
+	
 	@BeforeAll
 	public static void inicializarDatos() {
         notasValidas = new int[]{1, 2, 3, 4, 5};
@@ -21,18 +21,13 @@ class TestMediaNotas {
 	@Test
 	void testMediaNotasValoresValidos() {
 		
-        float mediaCalculada = MisArrays.mediaNotas(notasValidas);
+        float maximo = MisArrays.maximaNota(notasValidas);
 
-        assertEquals(3, mediaCalculada);
+        assertEquals(5, maximo);
     }
 	
 	@Test
-	void testMediaNotaValoresNoValidos() {
-		
-        assertThrows(IllegalArgumentException.class, () -> MisArrays.mediaNotas(notasNoValidas));
+	void testMaximaNotaValoresValidos() {
+        assertThrows(IllegalArgumentException.class, () -> MisArrays.maximaNota(notasNoValidas));
     }
-	
-	
 }
-
-
