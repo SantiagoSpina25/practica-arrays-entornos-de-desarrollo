@@ -44,5 +44,28 @@ public abstract class MisArrays {
 
         return maximaNota;
     }
+    
+    /**
+     * Devuelve la nota mínima en un array.
+     * 
+     * @param notas El array de notas.
+     * @return La nota mínima en el array.
+     * @throws IllegalArgumentException, si alguna nota está fuera del rango válido (entre 0 y 10).
+     */
+    public static int minimaNota(int[] notas) {
+        int minimaNota = notas[0];
+        
+        for (int i=0; i<notas.length;i++) {
+        	if (notas[i] < 0 || notas[i] > 10) {
+                throw new IllegalArgumentException("Las notas deben estar entre 0 y 10");
+            }else if(notas[i] < minimaNota){
+            	minimaNota = notas[i];
+            }
+            
+        }
+
+        return minimaNota;
+    }
+
 	
 }

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import util.MisArrays;
 
-class TestMaximaNota {
+class TestMinimaNota {
 
 	static int[] notasValidas;
 	static int[] notasNoValidas;
@@ -19,15 +19,15 @@ class TestMaximaNota {
     }
 	
 	@Test
-	void testMaximaNotasValoresValidos() {
+	void testMinimaNotasValoresValidos() {
 		
-        float maximo = MisArrays.maximaNota(notasValidas);
+        float minimo = MisArrays.minimaNota(notasValidas);
 
-        assertEquals(5, maximo);
+        assertEquals(1, minimo);
     }
 	
 	@Test
-	void testMaximaNotaValoresValidos() {
-        assertThrows(IllegalArgumentException.class, () -> MisArrays.maximaNota(notasNoValidas));
+	void testMinimaNotaValoresValidos() {
+        assertThrows(IllegalArgumentException.class, () -> MisArrays.minimaNota(notasNoValidas));
     }
 }
