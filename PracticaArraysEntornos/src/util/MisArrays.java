@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Arrays;
+
 public abstract class MisArrays {
 	
 	
@@ -65,6 +67,32 @@ public abstract class MisArrays {
         }
 
         return minimaNota;
+    }
+    
+    /**
+     * Calcula la mediana de las notas en un array.
+     * 
+     * @param notas El array de notas.
+     * @return La mediana de las notas, con decimales.
+     * @throws IllegalArgumentException, si alguna nota está fuera del rango válido (entre 0 y 10).
+     */
+    public static float medianaNotas(int[] notas) {
+    	
+    	for (int i=0; i<notas.length;i++) {
+        	if (notas[i] < 0 || notas[i] > 10) {
+                throw new IllegalArgumentException("Las notas deben estar entre 0 y 10");
+            }
+        }
+    	
+    	Arrays.sort(notas);
+        int[] arrayOrdenado = notas;
+        int mitad = arrayOrdenado.length / 2;
+
+        if (arrayOrdenado.length % 2 == 0) {
+            return (float) (arrayOrdenado[mitad - 1] + arrayOrdenado[mitad]) / 2;
+        } else {
+            return arrayOrdenado[mitad];
+        }
     }
 
 	
